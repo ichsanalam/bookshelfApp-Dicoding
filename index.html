@@ -73,19 +73,18 @@
             </div>
           </div>
         </div>
-          <!-- sadf -->
-          <div class="card-list">
-            <div data-bookid="123123123" data-testid="bookItem">
-              <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
-              <p data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
-              <p data-testid="bookItemYear">Tahun: 2030</p>
-              <div>
-                <button data-testid="bookItemIsCompleteButton" class="btn-finish">Selesai dibaca</button>
-                <button data-testid="bookItemDeleteButton" class="btn-delete">Hapus Buku</button>
-                <button data-testid="bookItemEditButton" class="btn-edit">Edit Buku</button>
-              </div>
+        <div class="card-list">
+          <div data-bookid="123123123" data-testid="bookItem">
+            <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
+            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
+            <p data-testid="bookItemYear">Tahun: 2030</p>
+            <div>
+              <button data-testid="bookItemIsCompleteButton" class="btn-finish">Selesai dibaca</button>
+              <button data-testid="bookItemDeleteButton" class="btn-delete">Hapus Buku</button>
+              <button data-testid="bookItemEditButton" class="btn-edit">Edit Buku</button>
             </div>
           </div>
+        </div>
 
 
     </section>
@@ -110,6 +109,24 @@
         </div>
       </div>
     </section>
+
+    <!-- modals edit button -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Buku</h2>
+        <form id="editForm">
+          <label for="editTitle">Judul</label>
+          <input type="text" id="editTitle" required>
+          <label for="editAuthor">Penulis</label>
+          <input type="text" id="editAuthor" required>
+          <label for="editYear">Tahun</label>
+          <input type="number" id="editYear" required>
+          <button type="submit" class="button">Simpan Perubahan</button>
+        </form>
+      </div>
+    </div>
+
   </main>
   <script src="main.js"></script>
 </body>
