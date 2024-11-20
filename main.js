@@ -43,6 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Close modal
         modal.style.display = "none";
     });
+
+    // search feature
+    const formSearch = document.getElementById('searchBook');
+    formSearch.addEventListener('submit', function(e) {
+        e.preventDefault();
+        searchBook()
+    })
 });
 
 function isStorageAvailabe() {
@@ -83,12 +90,13 @@ function renderBooks() {
     completedBook.innerHTML = "";
     for (const book of books) {
         // card
+        // const card = document.createElement("div");
+        // card.setAttribute("class", "card-list");
+        // card list
         const card = document.createElement("div");
         card.setAttribute("class", "card-list");
-        // div
-        const div = document.createElement("div");
-        div.setAttribute("data-bookid", "book.id");
-        div.setAttribute("data-testid", "bookItem");
+        card.setAttribute("data-bookid", book.id);
+        card.setAttribute("data-testid", "bookItem");
         // title
         const title = document.createElement("h3");
         title.setAttribute("data-testid", "bookItemTitle");
@@ -138,7 +146,7 @@ function renderBooks() {
         divButton.append(finishBtn, deleteBtn, editBtn);
 
         // add to card
-        card.append(div, title, author, year, divButton);
+        card.append(title, author, year, divButton);
 
         if (book.isComplete == false) {
             incompletedBook.appendChild(card);
@@ -192,4 +200,21 @@ function editBook(book) {
 
     const modal = document.getElementById('editModal');
     modal.style.display = 'block';
+}
+
+function searchBook() {
+    const search = document.getElementById('searchBookTitle').value.toLowerCase();
+    const filterBook = books.filter(book => book.title.toLowerCase().includes(search))
+
+    const bookCard = document.querySelectorAll("[data-testid='bookItem']");
+    for (const book of bookCard) {
+        const bookId = parseInt(book.getAttribute('data-bookid'));
+        const result = filterBook.some(b => b.id === bookId);
+        console.log(result);
+        if (result) {
+            book.removeAttribute('hidden')
+        } else {
+            book.setAttribute('hidden', true)
+        }
+    }
 }
