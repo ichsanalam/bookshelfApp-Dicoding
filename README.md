@@ -2,6 +2,13 @@
 
 Ini adalah starter project untuk siswa yang sedang mengerjakan tugas akhir kelas Belajar Membuat Front-End Web untuk Pemula.
 
+## Kriteria Tugas
+- Mampu Menambahkan Buku Baru
+- Memiliki Dua Rak Buku: “Belum Selesai Dibaca” dan “Selesai Dibaca”
+- Mampu Memindahkan Buku Antar Rak
+- Mampu Menghapus Buku
+- Memanfaatkan localStorage sebagai Penyimpanan Buku
+
 ## Ketentuan Pengerjaan Tugas
 
 Untuk mempermudah penilaian submission yang dikirim, Anda perlu memahami ketentuan-ketentuan berikut dalam mengerjakan tugas ini.
